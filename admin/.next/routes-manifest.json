@@ -1,0 +1,153 @@
+{
+  "version": 3,
+  "pages404": true,
+  "caseSensitive": false,
+  "basePath": "",
+  "redirects": [
+    {
+      "source": "/:path+/",
+      "destination": "/:path+",
+      "internal": true,
+      "statusCode": 308,
+      "regex": "^(?:/((?:[^/]+?)(?:/(?:[^/]+?))*))/$"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Strict-Transport-Security",
+          "value": "max-age=63072000; includeSubDomains; preload"
+        }
+      ],
+      "regex": "^(?:/(.*))(?:/)?$"
+    }
+  ],
+  "dynamicRoutes": [
+    {
+      "page": "/main/dashboard/report/print/[NIS]",
+      "regex": "^/main/dashboard/report/print/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPNIS": "nxtPNIS"
+      },
+      "namedRegex": "^/main/dashboard/report/print/(?<nxtPNIS>[^/]+?)(?:/)?$"
+    }
+  ],
+  "staticRoutes": [
+    {
+      "page": "/",
+      "regex": "^/(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/(?:/)?$"
+    },
+    {
+      "page": "/_not-found",
+      "regex": "^/_not\\-found(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/_not\\-found(?:/)?$"
+    },
+    {
+      "page": "/main",
+      "regex": "^/main(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/main(?:/)?$"
+    },
+    {
+      "page": "/main/dashboard",
+      "regex": "^/main/dashboard(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/main/dashboard(?:/)?$"
+    },
+    {
+      "page": "/main/dashboard/admins",
+      "regex": "^/main/dashboard/admins(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/main/dashboard/admins(?:/)?$"
+    },
+    {
+      "page": "/main/dashboard/presence",
+      "regex": "^/main/dashboard/presence(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/main/dashboard/presence(?:/)?$"
+    },
+    {
+      "page": "/main/dashboard/report",
+      "regex": "^/main/dashboard/report(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/main/dashboard/report(?:/)?$"
+    },
+    {
+      "page": "/main/dashboard/settings",
+      "regex": "^/main/dashboard/settings(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/main/dashboard/settings(?:/)?$"
+    },
+    {
+      "page": "/main/dashboard/students",
+      "regex": "^/main/dashboard/students(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/main/dashboard/students(?:/)?$"
+    },
+    {
+      "page": "/main/login",
+      "regex": "^/main/login(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/main/login(?:/)?$"
+    },
+    {
+      "page": "/main/login/2-step-verification",
+      "regex": "^/main/login/2\\-step\\-verification(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/main/login/2\\-step\\-verification(?:/)?$"
+    },
+    {
+      "page": "/user",
+      "regex": "^/user(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/user(?:/)?$"
+    },
+    {
+      "page": "/user/parent-report",
+      "regex": "^/user/parent\\-report(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/user/parent\\-report(?:/)?$"
+    },
+    {
+      "page": "/user/register/steps",
+      "regex": "^/user/register/steps(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/user/register/steps(?:/)?$"
+    },
+    {
+      "page": "/user/register/token",
+      "regex": "^/user/register/token(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/user/register/token(?:/)?$"
+    }
+  ],
+  "dataRoutes": [],
+  "rsc": {
+    "header": "RSC",
+    "varyHeader": "RSC, Next-Router-State-Tree, Next-Router-Prefetch, Next-Router-Segment-Prefetch",
+    "prefetchHeader": "Next-Router-Prefetch",
+    "didPostponeHeader": "x-nextjs-postponed",
+    "contentTypeHeader": "text/x-component",
+    "suffix": ".rsc",
+    "prefetchSuffix": ".prefetch.rsc",
+    "prefetchSegmentHeader": "Next-Router-Segment-Prefetch",
+    "prefetchSegmentSuffix": ".segment.rsc",
+    "prefetchSegmentDirSuffix": ".segments"
+  },
+  "rewriteHeaders": {
+    "pathHeader": "x-nextjs-rewritten-path",
+    "queryHeader": "x-nextjs-rewritten-query"
+  },
+  "rewrites": [
+    {
+      "source": "/admin/education/spensa/821022/absen",
+      "destination": "/",
+      "regex": "^/admin/education/spensa/821022/absen(?:/)?$"
+    }
+  ]
+}

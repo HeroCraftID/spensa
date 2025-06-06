@@ -1,0 +1,18 @@
+{
+  "/_not-found/page": "/_not-found",
+  "/page": "/",
+  "/main/page": "/main",
+  "/user/page": "/user",
+  "/user/parent-report/page": "/user/parent-report",
+  "/main/login/page": "/main/login",
+  "/main/login/2-step-verification/page": "/main/login/2-step-verification",
+  "/user/register/steps/page": "/user/register/steps",
+  "/user/register/token/page": "/user/register/token",
+  "/main/dashboard/page": "/main/dashboard",
+  "/main/dashboard/settings/page": "/main/dashboard/settings",
+  "/main/dashboard/report/print/[NIS]/page": "/main/dashboard/report/print/[NIS]",
+  "/main/dashboard/admins/page": "/main/dashboard/admins",
+  "/main/dashboard/report/page": "/main/dashboard/report",
+  "/main/dashboard/presence/page": "/main/dashboard/presence",
+  "/main/dashboard/students/page": "/main/dashboard/students"
+}

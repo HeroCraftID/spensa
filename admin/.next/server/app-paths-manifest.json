@@ -1,0 +1,18 @@
+{
+  "/_not-found/page": "app/_not-found/page.js",
+  "/page": "app/page.js",
+  "/main/page": "app/main/page.js",
+  "/user/page": "app/user/page.js",
+  "/user/parent-report/page": "app/user/parent-report/page.js",
+  "/main/login/page": "app/main/login/page.js",
+  "/main/login/2-step-verification/page": "app/main/login/2-step-verification/page.js",
+  "/user/register/steps/page": "app/user/register/steps/page.js",
+  "/user/register/token/page": "app/user/register/token/page.js",
+  "/main/dashboard/page": "app/main/dashboard/page.js",
+  "/main/dashboard/settings/page": "app/main/dashboard/settings/page.js",
+  "/main/dashboard/report/print/[NIS]/page": "app/main/dashboard/report/print/[NIS]/page.js",
+  "/main/dashboard/admins/page": "app/main/dashboard/admins/page.js",
+  "/main/dashboard/report/page": "app/main/dashboard/report/page.js",
+  "/main/dashboard/presence/page": "app/main/dashboard/presence/page.js",
+  "/main/dashboard/students/page": "app/main/dashboard/students/page.js"
+}
