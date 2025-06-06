@@ -17,7 +17,8 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  basePath: "/client/education/spensa/998213/absen",
+  basePath: "/admin/education/spensa/821022/absen",
+  assetPrefix: "/admin/education/spensa/821022/absen",
   trailingSlash: true,
 };
 

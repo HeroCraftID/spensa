@@ -10,6 +10,7 @@ const nextConfig = {
     unoptimized: true,
   },
   basePath: "/admin/education/spensa/821022/absen",
+  assetPrefix: "/admin/education/spensa/821022/absen",
   trailingSlash: true,
   async headers() {
     return [
