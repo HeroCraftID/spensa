@@ -9,9 +9,6 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  basePath: "/admin/education/spensa/821022/absen",
-  assetPrefix: "/admin/education/spensa/821022/absen",
-  trailingSlash: true,
   async headers() {
     return [
       {
@@ -25,6 +22,15 @@ const nextConfig = {
       },
     ];
   },
+  async rewrites() {
+  return [
+    {
+      source: '/admin/education/spensa/821022/absen/:path*',
+      destination: '/',  // Render halaman root "/"
+    },
+  ]
+},
+
 };
 
 export default nextConfig;
