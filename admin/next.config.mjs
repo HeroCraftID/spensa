@@ -9,6 +9,8 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
+  basePath: "/admin/education/spensa/821022/absen",
+  trailingSlash: true,
   async headers() {
     return [
       {
