@@ -1,0 +1,443 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 230 25% 3%;
+    --foreground: 213 31% 91%;
+
+    --muted: 223 47% 11%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 216 34% 17%;
+    --accent-foreground: 210 40% 98%;
+
+    --popover: 230 25% 3%;
+    --popover-foreground: 215 20.2% 65.1%;
+
+    --border: 216 34% 17%;
+    --input: 216 34% 17%;
+
+    --card: 230 25% 3%;
+    --card-foreground: 213 31% 91%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 1.2%;
+
+    --secondary: 222.2 47.4% 11.2%;
+    --secondary-foreground: 210 40% 98%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+
+    --ring: 216 34% 17%;
+
+    --radius: 0.75rem;
+
+    /* Custom colors for attendance status */
+    --status-present: 142 76% 36%;
+    --status-absent: 0 84% 60%;
+    --status-excused: 217 91% 60%;
+    --status-alpha: 215 16% 47%;
+    --status-late: 38 92% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+/* Futuristic styles */
+.futuristic-glow {
+  box-shadow: 0 0 15px rgba(56, 182, 255, 0.3);
+}
+
+.futuristic-card {
+  background: linear-gradient(145deg, rgba(10, 15, 25, 0.8), rgba(10, 15, 25, 0.95));
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+}
+
+.futuristic-sidebar {
+  background: linear-gradient(180deg, rgba(10, 15, 25, 0.95), rgba(10, 15, 25, 0.98));
+  backdrop-filter: blur(10px);
+  border-right: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+.futuristic-gradient-text {
+  background: linear-gradient(90deg, #38b6ff, #5271ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.futuristic-button {
+  background: linear-gradient(90deg, #38b6ff, #5271ff);
+  transition: all 0.3s ease;
+}
+
+.futuristic-button:hover {
+  background: linear-gradient(90deg, #5271ff, #38b6ff);
+  box-shadow: 0 0 15px rgba(56, 182, 255, 0.5);
+}
+
+.futuristic-input {
+  background: rgba(10, 15, 25, 0.6);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  backdrop-filter: blur(4px);
+}
+
+.futuristic-table th {
+  background: rgba(10, 15, 25, 0.8);
+  border-bottom: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+.futuristic-table tr {
+  border-bottom: 1px solid rgba(59, 130, 246, 0.1);
+}
+
+.futuristic-table tr:hover {
+  background: rgba(59, 130, 246, 0.05);
+}
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-weight: 500;
+  font-size: 0.875rem;
+}
+
+.status-present {
+  background-color: rgba(34, 197, 94, 0.15);
+  color: rgb(34, 197, 94);
+  border: 1px solid rgba(34, 197, 94, 0.3);
+}
+
+.status-absent {
+  background-color: rgba(239, 68, 68, 0.15);
+  color: rgb(239, 68, 68);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.status-excused {
+  background-color: rgba(59, 130, 246, 0.15);
+  color: rgb(59, 130, 246);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+.status-alpha {
+  background-color: rgba(107, 114, 128, 0.15);
+  color: rgb(156, 163, 175);
+  border: 1px solid rgba(107, 114, 128, 0.3);
+}
+
+.status-late {
+  background-color: rgba(245, 158, 11, 0.15);
+  color: rgb(245, 158, 11);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+/* Animated background */
+.animated-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: radial-gradient(circle at 50% 50%, rgba(10, 15, 25, 1), rgba(2, 5, 15, 1));
+}
+
+.animated-bg::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(circle at 25% 25%, rgba(56, 182, 255, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(82, 113, 255, 0.03) 0%, transparent 50%);
+}
+
+.grid-lines {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: 50px 50px;
+  background-image: linear-gradient(to right, rgba(59, 130, 246, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(59, 130, 246, 0.05) 1px, transparent 1px);
+  z-index: -1;
+}
+
+/* Enhanced grid background for registration page */
+.register-grid-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-size: 30px 30px;
+  background-image: linear-gradient(to right, rgba(56, 182, 255, 0.07) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(56, 182, 255, 0.07) 1px, transparent 1px);
+  animation: gridPulse 15s infinite alternate;
+}
+
+.register-grid-background::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: 150px 150px;
+  background-image: linear-gradient(to right, rgba(82, 113, 255, 0.1) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(82, 113, 255, 0.1) 1px, transparent 1px);
+  animation: gridPulse 20s infinite alternate-reverse;
+}
+
+.register-grid-background::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 15% 15%, rgba(56, 182, 255, 0.03) 0%, transparent 25%),
+    radial-gradient(circle at 85% 85%, rgba(82, 113, 255, 0.03) 0%, transparent 25%);
+}
+
+/* Futuristic grid backgrounds for parent portal */
+.futuristic-grid-dark {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-color: #0f172a;
+  background-image: linear-gradient(rgba(56, 182, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(56, 182, 255, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+  animation: gridShift 30s infinite linear;
+}
+
+.futuristic-grid-dark::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(rgba(82, 113, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(82, 113, 255, 0.02) 1px, transparent 1px);
+  background-size: 100px 100px;
+  animation: gridShift 45s infinite linear reverse;
+}
+
+.futuristic-grid-light {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-color: #f8fafc;
+  background-image: linear-gradient(rgba(59, 130, 246, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(59, 130, 246, 0.08) 1px, transparent 1px);
+  background-size: 50px 50px;
+  animation: gridShift 30s infinite linear;
+}
+
+.futuristic-grid-light::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(rgba(99, 102, 241, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(99, 102, 241, 0.06) 1px, transparent 1px);
+  background-size: 100px 100px;
+  animation: gridShift 45s infinite linear reverse;
+}
+
+/* Floating particles */
+.floating-particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: rgba(56, 182, 255, 0.6);
+  border-radius: 50%;
+  animation: float 20s infinite linear;
+}
+
+.particle-1 {
+  top: 20%;
+  left: 10%;
+  animation-delay: 0s;
+  animation-duration: 25s;
+}
+
+.particle-2 {
+  top: 60%;
+  left: 80%;
+  animation-delay: 5s;
+  animation-duration: 30s;
+}
+
+.particle-3 {
+  top: 80%;
+  left: 20%;
+  animation-delay: 10s;
+  animation-duration: 35s;
+}
+
+.particle-4 {
+  top: 30%;
+  left: 70%;
+  animation-delay: 15s;
+  animation-duration: 28s;
+}
+
+.particle-5 {
+  top: 50%;
+  left: 50%;
+  animation-delay: 20s;
+  animation-duration: 32s;
+}
+
+/* Enhanced futuristic effects */
+.futuristic-card-glow {
+  box-shadow: 0 0 20px rgba(56, 182, 255, 0.1), 0 0 40px rgba(56, 182, 255, 0.05), inset 0 1px 0
+    rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.futuristic-card-glow:hover {
+  box-shadow: 0 0 30px rgba(56, 182, 255, 0.15), 0 0 60px rgba(56, 182, 255, 0.08), inset 0 1px 0
+    rgba(255, 255, 255, 0.15);
+}
+
+.futuristic-counter {
+  position: relative;
+  overflow: hidden;
+}
+
+.futuristic-counter::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(56, 182, 255, 0.2), transparent);
+  animation: shimmer 3s infinite;
+}
+
+@keyframes gridPulse {
+  0% {
+    opacity: 0.5;
+    background-size: 30px 30px;
+  }
+  50% {
+    opacity: 0.7;
+    background-size: 32px 32px;
+  }
+  100% {
+    opacity: 0.5;
+    background-size: 30px 30px;
+  }
+}
+
+@keyframes gridShift {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(50px, 50px);
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px) translateX(0px);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh) translateX(100px);
+    opacity: 0;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+/* Circular progress */
+.circular-progress {
+  position: relative;
+  width: 120px;
+  height: 120px;
+}
+
+.circular-progress svg {
+  transform: rotate(-90deg);
+}
+
+.circular-progress-value {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.circular-progress-label {
+  position: absolute;
+  bottom: -20px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 0.875rem;
+  color: var(--muted-foreground);
+}
+
+/* Chart styles */
+.chart-container {
+  width: 100%;
+  height: 100%;
+  min-height: 200px;
+}
+
+.chart-tooltip {
+  background: rgba(10, 15, 25, 0.9);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}

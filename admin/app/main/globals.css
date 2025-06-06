@@ -1,0 +1,283 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 230 25% 3%;
+    --foreground: 213 31% 91%;
+
+    --muted: 223 47% 11%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 216 34% 17%;
+    --accent-foreground: 210 40% 98%;
+
+    --popover: 230 25% 3%;
+    --popover-foreground: 215 20.2% 65.1%;
+
+    --border: 216 34% 17%;
+    --input: 216 34% 17%;
+
+    --card: 230 25% 3%;
+    --card-foreground: 213 31% 91%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 1.2%;
+
+    --secondary: 222.2 47.4% 11.2%;
+    --secondary-foreground: 210 40% 98%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+
+    --ring: 216 34% 17%;
+
+    --radius: 0.75rem;
+
+    /* Custom colors for attendance status */
+    --status-present: 142 76% 36%;
+    --status-absent: 0 84% 60%;
+    --status-excused: 217 91% 60%;
+    --status-alpha: 215 16% 47%;
+    --status-late: 38 92% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+@media print {
+  body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background: black;
+  }
+
+  .print-background {
+    width: 100vw;
+    height: 100vh;
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    padding-top: 1cm;
+    box-sizing: border-box;
+  }
+
+  .print-wrapper {
+    width: 210mm;
+    height: auto;
+    background: white;
+    padding: 1cm;
+    box-sizing: border-box;
+  }
+
+  @page {
+    size: A4 portrait;
+    margin: 0;
+  }
+}
+/* Futuristic styles */
+.futuristic-glow {
+  box-shadow: 0 0 15px rgba(56, 182, 255, 0.3);
+}
+
+.futuristic-card {
+  background: linear-gradient(145deg, rgba(10, 15, 25, 0.8), rgba(10, 15, 25, 0.95));
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+}
+
+.futuristic-sidebar {
+  background: linear-gradient(180deg, rgba(10, 15, 25, 0.95), rgba(10, 15, 25, 0.98));
+  backdrop-filter: blur(10px);
+  border-right: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+.futuristic-gradient-text {
+  background: linear-gradient(90deg, #38b6ff, #5271ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.futuristic-button {
+  background: linear-gradient(90deg, #38b6ff, #5271ff);
+  transition: all 0.3s ease;
+}
+.futuristic-button-green {
+  background: linear-gradient(90deg, #00ff15, #00ffc8);
+  transition: all 0.3s ease;
+}
+.futuristic-button-red {
+  background: linear-gradient(90deg, #ff0000, #ff6600);
+  transition: all 0.3s ease;
+}
+
+.futuristic-button:hover {
+  background: linear-gradient(90deg, #5271ff, #38b6ff);
+  box-shadow: 0 0 15px rgba(56, 182, 255, 0.5);
+}
+.futuristic-button-green:hover {
+  background: linear-gradient(90deg, #00ffc8, #00ff15);
+  box-shadow: 0 0 15px rgba(125, 255, 86, 0.5);
+}
+.futuristic-button-red:hover {
+  background: linear-gradient(90deg, #ff6600, #ff0000);
+  box-shadow: 0 0 15px rgba(255, 56, 56, 0.5);
+}
+
+.futuristic-input {
+  background: rgba(10, 15, 25, 0.6);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  backdrop-filter: blur(4px);
+}
+
+.futuristic-table th {
+  background: rgba(10, 15, 25, 0.8);
+  border-bottom: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+.futuristic-table tr {
+  border-bottom: 1px solid rgba(59, 130, 246, 0.1);
+}
+
+.futuristic-table tr:hover {
+  background: rgba(59, 130, 246, 0.05);
+}
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-weight: 500;
+  font-size: 0.875rem;
+}
+
+.status-present {
+  background-color: rgba(34, 197, 94, 0.15);
+  color: rgb(34, 197, 94);
+  border: 1px solid rgba(34, 197, 94, 0.3);
+}
+
+.status-absent {
+  background-color: rgba(239, 68, 68, 0.15);
+  color: rgb(239, 68, 68);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.status-excused {
+  background-color: rgba(59, 130, 246, 0.15);
+  color: rgb(59, 130, 246);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+.status-alpha {
+  background-color: rgba(107, 114, 128, 0.15);
+  color: rgb(156, 163, 175);
+  border: 1px solid rgba(107, 114, 128, 0.3);
+}
+
+.status-late {
+  background-color: rgba(245, 158, 11, 0.15);
+  color: rgb(245, 158, 11);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+/* Animated background */
+.animated-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: radial-gradient(circle at 50% 50%, rgba(10, 15, 25, 1), rgba(2, 5, 15, 1));
+}
+
+.animated-bg::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(circle at 25% 25%, rgba(56, 182, 255, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(82, 113, 255, 0.03) 0%, transparent 50%);
+}
+
+.grid-lines {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: 50px 50px;
+  background-image: linear-gradient(to right, rgba(59, 130, 246, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(59, 130, 246, 0.05) 1px, transparent 1px);
+  z-index: -1;
+}
+
+/* Circular progress */
+.circular-progress {
+  position: relative;
+  width: 120px;
+  height: 120px;
+}
+
+.circular-progress svg {
+  transform: rotate(-90deg);
+}
+
+.circular-progress-inner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+  height: 70%;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(10, 15, 25, 0.7);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+.circular-progress-value {
+  font-size: 1.5rem;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.circular-progress-label {
+  font-size: 0.75rem;
+  color: var(--muted-foreground);
+  margin-top: 0.25rem;
+}
+
+/* Chart styles */
+.chart-container {
+  width: 100%;
+  height: 100%;
+  min-height: 200px;
+}
+
+.chart-tooltip {
+  background: rgba(10, 15, 25, 0.9);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
