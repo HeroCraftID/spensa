@@ -25,7 +25,7 @@ const nextConfig = {
   async rewrites() {
   return [
     {
-      source: '/admin/education/spensa/821022/absen/:path*',
+      source: '/admin/education/spensa/821022/absen',
       destination: '/',  // Render halaman root "/"
     },
   ]
