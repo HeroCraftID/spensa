@@ -18,5 +18,5 @@ RUN npm install -g pm2
 # Misal, masing-masing di `admin/ecosystem.config.js` dan `client/ecosystem.config.js`
 
 # Jalankan kedua proyek secara bersamaan menggunakan pm2-runtime
-CMD pm2-runtime start admin/ecosystem.config.js --only admin --no-daemon && \
-    pm2-runtime start client/ecosystem.config.js --only client --no-daemon
+CMD pm2-runtime start admin/ecosystem.config.js --only admin && \
+    pm2-runtime start client/ecosystem.config.js --only client
