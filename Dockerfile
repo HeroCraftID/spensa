@@ -1,23 +1,22 @@
-# Base image
+# Gunakan image resmi Node.js
 FROM node:20.18.0
 
 # Set working directory
 WORKDIR /app
 
-# Copy semua isi folder ke container
+# Copy semua file ke dalam container
 COPY . .
 
-# Install dependencies untuk project1 dan project2
-RUN cd project1 && npm install
-RUN cd project2 && npm install
+# Install dependencies untuk admin dan client
+RUN cd admin && npm install && npm run build
+RUN cd client && npm install && npm run build
 
-# Build project kalau perlu (contoh Next.js)
-RUN cd project1 && npm run build
-RUN cd project2 && npm run build
-
-# Jalankan kedua project dengan pm2 atau concurrently
-# Contoh pakai pm2 supaya bisa jalanin 2 app bersamaan
+# Install pm2 secara global
 RUN npm install -g pm2
 
-# Start kedua project secara bersamaan
-CMD ["pm2-runtime", "start", "project1/ecosystem.config.js", "--only", "project1", "--no-daemon", "--", "project2/ecosystem.config.js"]
+# Buat file ekosistem PM2 secara manual jika belum ada
+# Misal, masing-masing di `admin/ecosystem.config.js` dan `client/ecosystem.config.js`
+
+# Jalankan kedua proyek secara bersamaan menggunakan pm2-runtime
+CMD pm2-runtime start admin/ecosystem.config.js --only admin --no-daemon && \
+    pm2-runtime start client/ecosystem.config.js --only client --no-daemon
