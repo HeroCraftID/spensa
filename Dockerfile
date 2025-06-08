@@ -8,8 +8,8 @@ WORKDIR /app
 COPY . .
 
 # Install dependencies untuk admin dan client
-RUN cd admin && npm install && npm run build
-RUN cd client && npm install && npm run build
+RUN cd admin && npm install --force && npm run build
+RUN cd client && npm install --force && npm run build
 
 # Install pm2 secara global
 RUN npm install -g pm2
