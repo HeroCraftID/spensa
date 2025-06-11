@@ -6,12 +6,18 @@ module.exports = {
       cwd: "./admin",
       script: "npm",
       args: "start",
+      env: {
+        PORT: 3000,
+      }
     },
     {
       name: "client",
       cwd: "./Client",
       script: "npm",
       args: "start",
+      env: {
+        PORT: 3001,
+      }
     },
   ],
 };
