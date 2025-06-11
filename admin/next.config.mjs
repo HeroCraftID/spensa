@@ -23,13 +23,13 @@ const nextConfig = {
     ];
   },
   async rewrites() {
-  return [
-    {
-      source: '/admin/education/spensa/821022/absen',
-      destination: '/',  // Render halaman root "/"
-    },
-  ]
-},
+    return [
+      {
+        source: '/admin/education/spensa/821022/absen/:path*',
+        destination: '/:path*',
+      },
+    ];
+  },
 
 };
 
