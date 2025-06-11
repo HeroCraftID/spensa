@@ -15,6 +15,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <base href="/" />
+      </head>
       <body>{children}
         <GlobalModal />
       </body>
